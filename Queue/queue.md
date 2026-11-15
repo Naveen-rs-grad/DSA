@@ -9,6 +9,26 @@ enqueue is a push_back, and dequeue is a pop_front.
 enqueue - push_back
 dequeue - pop_front
 
+## Circular queue
+
 circular array queue in C, also called a ring buffer.
 
 rear can be less than front. They’re array indices, and each wraps independently. rear is the next slot to write, while front is the next slot to read.
+
+## Deque
+
+| Operation | Steps |
+|---|---|
+| `push_back()` | Write at `rear`, then move `rear` forward |
+| `pop_front()` | Read at `front`, then move `front` forward |
+| `push_front()` | Move `front` backward, then write there |
+| `pop_back()` | Move `rear` backward, then read there |
+
+<p align="center">
+  <img src="Images/deque.jpg" alt="deque">
+</p>
+
+## Priority queue
+
+In a regular queue, the first item inserted leaves first. In a priority queue, the highest-priority item leaves first, regardless of arrival order.
+
