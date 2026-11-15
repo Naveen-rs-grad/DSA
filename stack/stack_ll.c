@@ -10,7 +10,7 @@ typedef struct node
     struct node* next;
 } node;
 
-void push(node **stack_head, int value) //In prder to have stack operation we push the node at front
+void push(node **stack_head, int value) //In order to have stack operation we push the node at front
 {
     node *new_node = malloc(sizeof(node));
     new_node->value = value;
