@@ -32,3 +32,29 @@ rear can be less than front. They’re array indices, and each wraps independent
 
 In a regular queue, the first item inserted leaves first. In a priority queue, the highest-priority item leaves first, regardless of arrival order.
 
+value is the data. priority determines when it gets removed. For our implementation, a smaller priority number means higher priority.
+
+```
+typedef struct
+{
+    int value;
+    int priority;
+} Item;
+```
+
+Unlike our circular deque, this implementation keeps all items together at indices 0 through count - 1. We only need count; we won’t use front or rear.
+
+| Index | Value | Priority |
+|---:|---:|---:|
+| 0 | 10 | 3 |
+| 1 | 20 | 1 |
+| 2 | 30 | 2 |
+| 3 | 40 | 1 |
+
+
+Removal:
+1. Search for the item with the smallest priority number.
+2. Save that item so the caller can use it.
+3. Shift subsequent items left to close its gap.
+4. Decrement count.
+
